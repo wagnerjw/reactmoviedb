@@ -20,7 +20,7 @@ export const useHomeFetch = () =>{
     const [error, setError] = useState(false);
     const [isLoadingMore, setIsLoadingMore] = useState(false);
     
-    //SANITY CHECK
+    // SANITY CHECK
     //console.log(searchTerm)
 
     // fetch the list of movies from the api
