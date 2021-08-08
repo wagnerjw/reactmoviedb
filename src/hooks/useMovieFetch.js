@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 // API import
 import API from '../API';
 
+// helpers
+import { isPersistedState } from "../helpers";
+
 
 export const useMovieFetch = movieId => {
     const [state, setState] = useState({});
@@ -30,16 +33,29 @@ export const useMovieFetch = movieId => {
                 actors: credits.cast,
                 directors
             })
+                // loading is done, set loading to false
+                setLoading(false);
                 // else catch error
             } catch (error) {
                 setError(true);
             }
+        };
 
-            // loading is done, set loading to false
+        const sessionState = isPersistedState(movieId);
+
+        if (sessionState) {
+            setState(sessionState);
             setLoading(false);
-        }; 
+            return;
+        }
+        
         fetchMovie();
     }, [movieId]);
+
+    // write to sessionStorage
+    useEffect(() => {
+        sessionStorage.setItem(movieId, JSON.stringify(state))
+    }, [movieId, state]);
 
     return { state, loading, error };
 };

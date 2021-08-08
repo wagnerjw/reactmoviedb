@@ -34,7 +34,7 @@ export const Content = styled.div`
 
 export const Text = styled.div`
     width: 100%;
-    padding: 0px 40px;
+    padding: 10px 40px;
     color: var(--white);
     overflow: hidden;
 
@@ -47,13 +47,13 @@ export const Text = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         background: #fff;
         color: #000000;
         font-weight: 800;
         border-radius: 50%;
-        margin: 0;
+        margin: 10;
     }
 
     .director{

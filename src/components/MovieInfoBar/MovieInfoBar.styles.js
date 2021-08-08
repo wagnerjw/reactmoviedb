@@ -18,7 +18,7 @@ export const Content = styled.div`
         align-items: center;
         justify-content: center;
         background: var(--medGrey);
-        border-radius: 20px;
+        border-radius: 10px;
         margin: 0 20px;
         flex: 1;
 
@@ -38,4 +38,5 @@ export const Content = styled.div`
             }
         }
     }
+    
 `;
